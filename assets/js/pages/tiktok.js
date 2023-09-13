@@ -30,10 +30,8 @@ const notif = document.getElementById("notif");
 const notifText = document.getElementById("notifText");
 
 // FUNCTION DOWNLOADER TIKTOK
-const downloaderTiktok = async (e, token) => {
+const downloaderTiktok = async (e) => {
   e.preventDefault();
-
-  grecaptcha.execute();
 
   // LOADING CODE
   if (loading.classList.contains("d-none")) {

@@ -7,9 +7,6 @@
 
     <link rel="stylesheet" href="../assets/css/main/app.css" />
     <link rel="stylesheet" href="../assets/css/main/app-dark.css" />
-
-    <!-- GOOGLE RECAPTHA -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
 
   <body>
@@ -148,7 +145,7 @@
                   </div>
                 </div>
                 <div class="card-body">
-                  <form class="form form-vertical" id="formTiktok">
+                  <form class="form form-vertical">
                     <div class="form-body">
                       <div class="row">
                         <div class="col-12">
@@ -169,9 +166,7 @@
                         <div class="col-12 text-center">
                           <button
                             type="submit"
-                            class="btn btn-primary mt-3 mb-1 icon px-4 icon-left g-recaptcha"
-                            data-sitekey="6LfjOiAoAAAAAEg7M3WNPJDn_Z0jZYnbgkgiGBqJ"
-                            data-callback="downloaderTiktok"
+                            class="btn btn-primary mt-3 mb-1 icon px-4 icon-left"
                             id="getTik"
                           >
                             <span
@@ -266,12 +261,6 @@
         </footer>
       </div>
     </div>
-    <div
-      class="g-recaptcha"
-      data-sitekey="6LfjOiAoAAAAAEg7M3WNPJDn_Z0jZYnbgkgiGBqJ"
-      data-callback="downloaderTiktok"
-      data-size="invisible"
-    ></div>
 
     <script src="../assets/js/bootstrap.js"></script>
     <script src="../assets/js/app.js"></script>
