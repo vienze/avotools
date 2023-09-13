@@ -37,7 +37,6 @@ const downloaderTiktok = async (e) => {
   if (loading.classList.contains("d-none")) {
     loading.classList.remove("d-none");
     btnDownload.classList.add("disabled");
-    btnDownload.innerText = "Downloading...";
   }
 
   try {
@@ -96,7 +95,6 @@ const downloaderTiktok = async (e) => {
     // SET VAR
     loading.classList.add("d-none");
     btnDownload.classList.remove("disabled");
-    btnDownload.innerText = "Download";
   } catch (error) {
 
 
