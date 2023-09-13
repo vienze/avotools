@@ -105,8 +105,8 @@ const downloaderTiktok = async (e, token) => {
       btnDownload.disabled = false;
     }, 3000);
     url.value = "";
+    console.log(error);
   }
-  console.log(btnDownload);
 };
 
 btnDownload.addEventListener("click", downloaderTiktok);
