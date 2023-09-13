@@ -32,11 +32,13 @@ const notifText = document.getElementById("notifText");
 // FUNCTION DOWNLOADER TIKTOK
 const downloaderTiktok = async (e, token) => {
   e.preventDefault();
+
   grecaptcha.execute();
+
   // LOADING CODE
   if (loading.classList.contains("d-none")) {
     loading.classList.remove("d-none");
-    btnDownload.disabled = true;
+    btnDownload.classList.add("disabled");
   }
 
   try {
@@ -93,7 +95,7 @@ const downloaderTiktok = async (e, token) => {
 
     // SET VAR
     loading.classList.add("d-none");
-    btnDownload.disabled = false;
+    btnDownload.classList.remove("disabled");
   } catch (error) {
     setTimeout(() => {
       notif.classList.add("show", "alert-danger");
@@ -104,6 +106,7 @@ const downloaderTiktok = async (e, token) => {
     }, 3000);
     url.value = "";
   }
+  console.log(btnDownload);
 };
 
 btnDownload.addEventListener("click", downloaderTiktok);
