@@ -41,9 +41,10 @@ const downloaderTiktok = async (e) => {
 
   try {
     if (url.value !== "") {
-      const apiUrl = `https://api.akuari.my.id/downloader/tiktok4?link=${url.value}`;
 
-      const response = await fetch(apiUrl);
+      const urlApi = `https://api.akuari.my.id/downloader/tiktok4?link=${url.value.replace(/\/$/, "")}`;
+
+      const response = await fetch(urlApi);
 
       const results = await response.json();
 
@@ -62,12 +63,12 @@ const downloaderTiktok = async (e) => {
         notif.classList.remove("alert-primary");
         notifText.innerHTML = "😢 Gagal mendapatkan url !";
         cardResult.classList.add("d-none");
+        url.value = "";
       }
 
-      console.log(notif);
 
       // SET DETAIL DOWNLOAD
-      tikThumb.url = data.thumbnail;
+      tikThumb.src = data.thumbnail;
       tikAuthor.innerText = data.author;
       tikDesc.innerText = data.description;
       tikLikes.innerText = data.like;
@@ -97,15 +98,16 @@ const downloaderTiktok = async (e) => {
     loading.classList.add("d-none");
     btnDownload.classList.remove("disabled");
   } catch (error) {
-    setTimeout(() => {
+
+
+    if (error) {
       notif.classList.add("show", "alert-danger");
       notif.innerText = "👩‍💻 Kesalahan sistem, coba lagi nanti !";
       // SET VAR
       loading.classList.add("d-none");
-      btnDownload.disabled = false;
-    }, 3000);
-    url.value = "";
-    console.log(error);
+      btnDownload.classList.remove("disabled");
+      document.location.reload();
+    }
   }
 };
 
