@@ -53,11 +53,13 @@ const downloaderTiktok = async (e) => {
 
       if (data.author !== "") {
         notif.classList.add("show", "alert-primary");
+        notif.classList.remove("alert-danger");
         notifText.innerHTML = "😎 Berhasil mendapatkan url !";
         cardResult.classList.remove("d-none");
         url.value = "";
       } else {
         notif.classList.add("show", "alert-danger");
+        notif.classList.remove("alert-primary");
         notifText.innerHTML = "😢 Gagal mendapatkan url !";
         cardResult.classList.add("d-none");
       }
