@@ -37,6 +37,7 @@ const downloaderTiktok = async (e) => {
   if (loading.classList.contains("d-none")) {
     loading.classList.remove("d-none");
     btnDownload.classList.add("disabled");
+    btnDownload.innerText = "Downloading...";
   }
 
   try {
@@ -45,9 +46,7 @@ const downloaderTiktok = async (e) => {
       const urlApi = `https://api.akuari.my.id/downloader/tiktok4?link=${url.value.replace(/\/$/, "")}`;
 
       const response = await fetch(urlApi);
-
       const results = await response.json();
-
       const data = results.respon;
 
       cardResult.classList.remove("d-none");
@@ -97,6 +96,7 @@ const downloaderTiktok = async (e) => {
     // SET VAR
     loading.classList.add("d-none");
     btnDownload.classList.remove("disabled");
+    btnDownload.innerText = "Download";
   } catch (error) {
 
 
