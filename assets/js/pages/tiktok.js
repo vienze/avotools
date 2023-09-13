@@ -29,7 +29,10 @@ const notif = document.getElementById("notif");
 // ALERT TEXT NOTIFICATION
 const notifText = document.getElementById("notifText");
 
-const onSubmit = async (token) => {
+// FUNCTION DOWNLOADER TIKTOK
+const downloaderTiktok = async (e, token) => {
+  e.preventDefault();
+  grecaptcha.execute();
   // LOADING CODE
   if (loading.classList.contains("d-none")) {
     loading.classList.remove("d-none");
@@ -101,12 +104,6 @@ const onSubmit = async (token) => {
     }, 3000);
     url.value = "";
   }
-};
-
-// FUNCTION DOWNLOADER TIKTOK
-const downloaderTiktok = async (e) => {
-  e.preventDefault();
-  grecaptcha.execute();
 };
 
 btnDownload.addEventListener("click", downloaderTiktok);
