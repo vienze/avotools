@@ -41,8 +41,10 @@ const downloaderTiktok = async (e) => {
 
   try {
     if (url.value !== "") {
-
-      const urlApi = `https://api.akuari.my.id/downloader/tiktok4?link=${url.value.replace(/\/$/, "")}`;
+      const urlApi = `https://api.akuari.my.id/downloader/tiktok4?link=${url.value.replace(
+        /\/$/,
+        ""
+      )}`;
 
       const response = await fetch(urlApi);
       const results = await response.json();
@@ -63,7 +65,6 @@ const downloaderTiktok = async (e) => {
         cardResult.classList.add("d-none");
         url.value = "";
       }
-
 
       // SET DETAIL DOWNLOAD
       tikThumb.src = data.thumbnail;
@@ -96,8 +97,6 @@ const downloaderTiktok = async (e) => {
     loading.classList.add("d-none");
     btnDownload.classList.remove("disabled");
   } catch (error) {
-
-
     if (error) {
       notif.classList.add("show", "alert-danger");
       notif.innerText = "👩‍💻 Kesalahan sistem, coba lagi nanti !";
