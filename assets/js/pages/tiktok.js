@@ -57,6 +57,7 @@ const downloaderTiktok = async (e) => {
         notif.classList.remove("alert-danger");
         notifText.innerHTML = "😎 Berhasil mendapatkan url !";
         cardResult.classList.remove("d-none");
+        window.location.href = "#resultTik";
         url.value = "";
       } else {
         notif.classList.add("show", "alert-danger");
